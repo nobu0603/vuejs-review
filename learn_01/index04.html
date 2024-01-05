@@ -32,6 +32,20 @@
         <ul>
             <li v-for="(value, key, index) in book">{{ index }}: {{ key }}: {{ value }}</li>
         </ul>
+
+        <!-- 複数オブジェクト -->
+        <table>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+            </tr>
+            <tr v-for="book in books" ::key="book.id">
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+            </tr>
+        </table>
         
     </div>
 
@@ -48,7 +62,24 @@
                     book: {
                         title: 'Vue.js入門',
                         price: 2000
-                    }
+                    },
+                    books: [
+                        {
+                            id: 1,
+                            title: 'Vue.js入門',
+                            price: 2000
+                        },
+                        {
+                            id: 2,
+                            title: 'React入門',
+                            price: 2500
+                        },
+                        {
+                            id: 3,
+                            title: 'Angular入門',
+                            price: 3000
+                        }
+                    ]
                 }
             }
         })
