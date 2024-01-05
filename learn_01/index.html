@@ -9,6 +9,15 @@
 <body>
     <div id="app">
         {{ message }}
+        <a v-bind:href="google">testへのリンク</a>
+        <br>
+        <a :href="google">testへのリンク（省略）</a>
+        <br>
+        <a :href="book.url">{{ book.title }}</a>
+        <br>
+        <input v-bind="{name:formInput.name, placeholder:formInput.placeholder}">
+        <br>
+        <input v-bind="formInput">
     </div>
 
     <script>
@@ -16,7 +25,16 @@
             el: '#app',
             data() {
                 return {
-                    message: 'Hello Vue!'
+                    message: 'Hello Vue!',
+                    google: 'https://www.google.com/',
+                    book: {
+                        title: 'Vue.js入門',
+                        url: 'https://www.google.com/'
+                    },
+                    formInput: {
+                        name: 'your name',
+                        placeholder: 'name here'
+                    }
                 }
             }
         })
