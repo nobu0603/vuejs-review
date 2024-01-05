@@ -10,6 +10,13 @@
     <div id="app">
         <div v-show="isDisplay">表示</div>
         <div v-show="!isDisplay">false表示</div>
+
+        <div v-if="isDisplay">ifで表示</div>
+
+        <div v-if="signal === 'red'">赤</div>
+        <div v-else-if="signal === 'yellow'">黄</div>
+        <div v-else-if="signal === 'blue'">青</div>
+        <div v-else>色がわかりません</div>
     </div>
 
     <script>
@@ -18,6 +25,7 @@
             data() {
                 return {
                     isDisplay: false,
+                    signal: 'red'
                 }
             }
         })
