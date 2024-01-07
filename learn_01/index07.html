@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+    <button onclick="btnClicked()">ボタン</button>
+    <div id="app">
+        <!-- <button v-on:click="btnClicked">ボタンVue</button> -->
+        <button @click="btnClicked">ボタンVue</button>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    
+                }
+            },
+            methods: {
+                btnClicked() {
+                    console.log('ボタンがクリックされましたVue')
+                }
+            },
+        })
+        function btnClicked() {
+            console.log('ボタンがクリックされました')
+        }
+    </script>
+</body>
+</html>
