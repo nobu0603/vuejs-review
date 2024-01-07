@@ -8,45 +8,8 @@
 </head>
 <body>
     <div id="app">
-        <!-- 配列 (value)-->
-        <ul>
-            <li v-for="member in members">{{ member }}</li>
-        </ul>
-
-        <!-- 配列 (index)-->
-        <ul>
-            <li v-for="(member, index) in members">{{ index }}: {{ member }}</li>
-        </ul>
-
-        <!-- オブジェクト(value) -->
-        <ul>
-            <li v-for="value in book">{{ value }}</li>
-        </ul>
-
-        <!-- オブジェクト(value, key) -->
-        <ul>
-            <li v-for="(value, key) in book">{{ key }}: {{ value }}</li>
-        </ul>
-
-        <!-- オブジェクト(value, key, index) -->
-        <ul>
-            <li v-for="(value, key, index) in book">{{ index }}: {{ key }}: {{ value }}</li>
-        </ul>
-
-        <!-- 複数オブジェクト -->
-        <table>
-            <tr>
-                <th>id</th>
-                <th>title</th>
-                <th>price</th>
-            </tr>
-            <tr v-for="book in books" ::key="book.id">
-                <td>{{ book.id }}</td>
-                <td>{{ book.title }}</td>
-                <td>{{ book.price }}</td>
-            </tr>
-        </table>
-        
+        <div v-text="test"></div>
+        <div v-html="test"></div>
     </div>
 
     <script>
@@ -54,32 +17,7 @@
             el: '#app',
             data() {
                 return {
-                    members: [
-                        '田中太郎',
-                        '山田花子',
-                        '佐藤一郎'
-                    ],
-                    book: {
-                        title: 'Vue.js入門',
-                        price: 2000
-                    },
-                    books: [
-                        {
-                            id: 1,
-                            title: 'Vue.js入門',
-                            price: 2000
-                        },
-                        {
-                            id: 2,
-                            title: 'React入門',
-                            price: 2500
-                        },
-                        {
-                            id: 3,
-                            title: 'Angular入門',
-                            price: 3000
-                        }
-                    ]
+                    test: 'あああ<br>いいい'
                 }
             }
         })
