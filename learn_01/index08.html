@@ -32,15 +32,33 @@
                 }
             },
             computed: {
-                totalPrice() {
-                    console.log('computed')
-                    return this.number * this.price
-                }
+                // totalPrice() {
+                //     return this.number * this.price
+                // }
+                // 省略形
+                totalPrice: app => app.number * app.price
             },
             watch: {
 
             }
         })
+
+        // windowオブジェクト
+        console.log(this)
+
+        const obj = {
+            test: function() {
+                // オブジェクトの中のthisはそのオブジェクトを指す
+                console.log(this)
+            }
+        }
+
+        const objArrow = {
+            test: () => {
+                // windowオブジェクト
+                console.log(this)
+            }
+        }
     </script>
 </body>
 </html>
