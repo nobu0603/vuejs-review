@@ -7,10 +7,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
 </head>
 <body>
-    <button onclick="btnClicked()">ボタン</button>
+    <button id="clickEvent" onclick="btnClicked()">ボタン</button>
     <div id="app">
         <!-- <button v-on:click="btnClicked">ボタンVue</button> -->
         <button @click="btnClicked">ボタンVue</button>
+        <button @click="btnClickedEvent">ボタンVueEvent</button>
+        <button @click="btnClickedArgs(1)">ボタンVue引数</button>
+        <button @click="btnClickedArgsEvent(1, $event)">ボタンVue引数イベント</button>
     </div>
 
     <script>
@@ -24,12 +27,25 @@
             methods: {
                 btnClicked() {
                     console.log('ボタンがクリックされましたVue')
+                },
+                btnClickedEvent(e) {
+                    console.log(e)
+                },
+                btnClickedArgs(int) {
+                    console.log(int)
+                },
+                btnClickedArgsEvent(int, e) {
+                    console.log(int, e)
                 }
             },
         })
         function btnClicked() {
             console.log('ボタンがクリックされました')
         }
+        const clickEvent = document.getElementById('clickEvent');
+        clickEvent.addEventListener('click', (e) => {
+            console.log(e)
+        })
     </script>
 </body>
 </html>
