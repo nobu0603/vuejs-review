@@ -8,6 +8,13 @@
 </head>
 <body>
     <button id="clickEvent" onclick="btnClicked()">ボタン</button>
+
+
+    <!-- Ajax -->
+    <form>
+        <button id="prevent" type="submit">送信</button>
+    </form>
+
     <div id="app">
         <!-- <button v-on:click="btnClicked">ボタンVue</button> -->
         <button @click="btnClicked">ボタンVue</button>
@@ -39,11 +46,17 @@
                 }
             },
         })
+
         function btnClicked() {
             console.log('ボタンがクリックされました')
         }
+
         const clickEvent = document.getElementById('clickEvent');
-        clickEvent.addEventListener('click', (e) => {
+
+        const prevent = document.getElementById('prevent');
+        prevent.addEventListener('click', (e) => {
+            // 送信ボタンのデフォルトの挙動をキャンセル
+            e.preventDefault();
             console.log(e)
         })
     </script>
